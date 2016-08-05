@@ -1,5 +1,8 @@
 #!/usr/bin/env groovy
 
+/* attempt to set up SCM polling on a pipeline created from the GitHub
+ * Organization Folder
+ */
 properties([
     pipelineTriggers([
         [$class: "SCMTrigger", scmpoll_spec: "H/10 * * * *"],
