@@ -1,5 +1,12 @@
 #!/usr/bin/env groovy
 
+properties([
+    pipelineTriggers([
+        [$class: "SCMTrigger", spec: "H/10 * * * *"],
+    ])
+])
+
+
 node('docker') {
     stage 'Cleanup workspace'
     deleteDir()
